@@ -1,0 +1,17 @@
+.controller {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-10%);
+  width: 100%;
+}
+
+.controller button {
+  text-align: center;
+  background-color: black;
+  color: antiquewhite;
+  border: none;
+  padding: 1%;
+  font-size: 14px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
