@@ -1,0 +1,57 @@
+.progress-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 15px;
+}
+
+.progress-bar__bar {
+  height: 100%;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Get rid of default border in Firefox. */
+    border: none;
+
+    &::-webkit-progress-bar {
+      background-color: $main-color;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+
+    &::-moz-progress-bar {
+      background-color: $main-color;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+  }
+}
+
+.progress-bar__time {
+  visibility: hidden;
+  position: absolute;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: rgb(82, 82, 82);
+  color: $main-color;
+  top: -25px;
+  transform: translateX(-50%);
+
+  .progress-bar:hover & {
+    visibility: visible;
+  }
+}
+
+.progress-bar__time--indication {
+  text-align: center;
+  color: $main-color;
+  width: 50px;
+}

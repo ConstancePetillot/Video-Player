@@ -1,0 +1,92 @@
+.volume {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.volume__mute {
+  position: relative;
+  cursor: pointer;
+}
+
+.volume__mute svg {
+  width: 20px;
+  fill: white;
+}
+
+.volume__mute.is-muted::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 2px;
+  height: 30px;
+  background-color: white;
+  transform: translateY(-80%) translateX(400%) rotate(45deg);
+}
+
+.volume__controller {
+  position: relative;
+  display: flex;
+  width: 60px;
+}
+
+.volume__controller input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.volume__indication {
+  visibility: hidden;
+  position: absolute;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: rgb(65, 65, 65);
+  color: white;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  .volume__controller:hover & {
+    visibility: visible;
+  }
+}
+
+//Override basic appearences
+input[type="range"] {
+  //-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+//Thumb style
+.volume__controller input::-moz-range-thumb {
+  background-color: white;
+  height: 15px;
+  width: 5px;
+  border-radius: 0px;
+}
+
+//track style
+.volume__controller input::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
