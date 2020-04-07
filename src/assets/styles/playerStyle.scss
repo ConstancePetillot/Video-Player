@@ -1,9 +1,25 @@
+.body {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.video {
+  max-width: 100%; // Permet à la video de pendre 100% du Contenaire Parent
+  height: 100%;
+  width: 100%;
+}
 .controller {
   position: absolute;
   bottom: 150px;
-  left: 50%;
+  left: 10%;
   transform: translateX(-10%);
-  width: 100%;
+  width: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonUp {
+  display: flex;
+  justify-content: space-between;
 }
 
 .controller button {
@@ -14,4 +30,16 @@
   padding: 1%;
   font-size: 14px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.TimeCodeCourant {
+  color: white;
+}
+
+.BarRange {
+  width: 1000vh;
+}
+
+.TimeCodeFin {
+  color: white;
 }
